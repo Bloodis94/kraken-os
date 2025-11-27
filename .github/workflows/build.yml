@@ -10,6 +10,15 @@ on:
 
   pull_request:
   workflow_dispatch: # allow manually triggering builds
+
+env:
+  ARCH: "x86_64"
+  IMAGE_NAME: "kraken-os"
+  IMAGE_REPO: "ghcr.io/${{ github.repository_owner }}/kraken-os"
+  IMAGE_TAG: "latest"
+  VERSION: "42"
+  VARIANT: "main"
+
 concurrency:
   # only run one build at a time
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
@@ -17,7 +26,7 @@ concurrency:
 jobs:
   bluebuild:
     name: Build Custom Image
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     permissions:
       contents: read
       packages: write
@@ -40,3 +49,14 @@ jobs:
 
           # enabled by default, disable if your image is small and you want faster builds
           maximize_build_space: true
+      - name: Build ISO
+        uses: jasonn3/build-container-installer@main
+        id: build
+        with:
+          arch: ${{ env.ARCH}}
+          image_name: ${{ env.IMAGE_NAME}}
+          image_repo: ${{ env.IMAGE_REPO}}
+          image_tag: ${{ env.IMAGE_TAG }}
+          version: ${{ env.VERSION }}
+          variant: ${{ env.VARIANT }}
+          iso_name: ${{ env.IMAGE_NAME }}-${{ env.IMAGE_TAG }}-${{ env.VERSION }}.iso
