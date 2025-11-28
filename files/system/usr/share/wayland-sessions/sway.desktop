@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Sway
-Comment=Sway Window Manager
-Exec=sway
+Comment=An i3-compatible Wayland compositor
+Exec=../sway/start-sway
 Type=Application
+DesktopNames=sway
