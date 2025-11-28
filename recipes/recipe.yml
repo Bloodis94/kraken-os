@@ -44,12 +44,6 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
-  - type: systemd
-    # this example disables automatic flatpak updates and enables a custom service unit for all users
-    system:
-      enabled:
-        - sddm.service
-
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)

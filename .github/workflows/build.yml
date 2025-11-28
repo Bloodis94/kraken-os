@@ -11,14 +11,6 @@ on:
   pull_request:
   workflow_dispatch: # allow manually triggering builds
 
-env:
-  ARCH: "x86_64"
-  IMAGE_NAME: "kraken-os"
-  IMAGE_REPO: "ghcr.io/${{ github.repository_owner }}/kraken-os"
-  IMAGE_TAG: "latest"
-  VERSION: "42"
-  VARIANT: "main"
-
 concurrency:
   # only run one build at a time
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
