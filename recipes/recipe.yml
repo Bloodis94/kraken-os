@@ -41,6 +41,7 @@ modules:
         - slurp #Sway dependencie
         - swayidle #Sway dependencie
         - gdm #Sway dependencie
+        - seatd
         - starship
         - wofi
         - alacritty
