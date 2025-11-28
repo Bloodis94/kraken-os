@@ -21,6 +21,9 @@ modules:
     repos:
       copr:
         - atim/starship
+    group-remove:
+      packages:
+        - kde-desktop
     install:
       packages:
         - sway #Sway
@@ -51,7 +54,6 @@ modules:
       packages:
         # example: removing firefox (in favor of the flatpak)
         # "firefox" is the main package, "firefox-langpacks" is a dependency
-        - @kde-desktop
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
