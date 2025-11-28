@@ -29,9 +29,7 @@ modules:
         - sway #Sway
         - wl-clipboard #Sway dependencie
         - waybar #Sway dependencie
-        - miko #Sway dependencie
         - light #Sway dependencie
-        - mpd #Sway dependencie
         - mpv #Sway dependencie
         - ncmpcpp #Sway dependencie
         - ranger #Sway dependencie
