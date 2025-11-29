@@ -23,6 +23,7 @@ modules:
         - atim/starship
     install:
       packages:
+        - xdg-user-dirs
         - sway #Sway
         - wl-clipboard #Sway dependencie
         - waybar #Sway dependencie
