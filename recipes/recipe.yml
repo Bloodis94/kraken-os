@@ -21,9 +21,6 @@ modules:
     repos:
       copr:
         - atim/starship
-    group-remove:
-      packages:
-        - kde-desktop
     install:
       packages:
         - sway #Sway
@@ -40,11 +37,12 @@ modules:
         - grim #Sway dependencie
         - slurp #Sway dependencie
         - swayidle #Sway dependencie
-        - gdm #Sway dependencie
+        - sddm #Sway dependencie
         - seatd
         - starship
         - wofi
-        - alacritty
+        - xdg-desktop-portal
+        - podman
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -55,7 +53,6 @@ modules:
   - type: systemd
     system:
       enabled:
-        - gdm
         - seatd
 
   - type: default-flatpaks
