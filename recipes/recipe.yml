@@ -24,6 +24,7 @@ modules:
     install:
       packages:
         - xdg-user-dirs
+        - xdg-desktop-portal
         - sway #Sway
         - wl-clipboard #Sway dependencie
         - waybar #Sway dependencie
@@ -38,12 +39,12 @@ modules:
         - grim #Sway dependencie
         - slurp #Sway dependencie
         - swayidle #Sway dependencie
-        - sddm #Sway dependencie
+        - gdm #Sway dependencie
         - seatd
         - starship
         - wofi
-        - xdg-desktop-portal
         - podman
+        - fish
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -51,10 +52,15 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
+  - type: dnf
+    group-remove:
+      packages:
+        - gnome
+
   - type: systemd
     system:
       enabled:
-        - sddm
+        - gdm
         - seatd
 
   - type: default-flatpaks
