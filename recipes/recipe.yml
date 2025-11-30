@@ -25,26 +25,26 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
-  - type: default-flatpaks
-    configurations:
-      - notify: true # Send notification after install/uninstall is finished (true/false)
-        scope: user
-        # If no repo information is specified, Flathub will be used by default
-        install: # system flatpaks we want all users to have and not remove
-          - com.github.marhkb.Pods
-          - io.github.flattool.Warehouse
-          - com.github.tchx84.Flatseal
-          - com.dec05eba.gpu_screen_recorder
-          - io.github.ilya_zlobintsev.LACT
-          - io.github.kolunmi.Bazaar
-          - org.onlyoffice.desktopeditors
-          - org.kde.kdenlive
-          - org.kde.okular
-          - org.kde.dolphin
-          - org.kde.filelight
-          - org.fedoraproject.MediaWriter
-          - org.kde.kate
-          - dev.deedles.Trayscale
-          - com.vivaldi.Vivaldi
+#  - type: default-flatpaks
+#    configurations:
+#      - notify: true # Send notification after install/uninstall is finished (true/false)
+#        scope: user
+#        # If no repo information is specified, Flathub will be used by default
+#        install: # system flatpaks we want all users to have and not remove
+#          - com.github.marhkb.Pods
+#          - io.github.flattool.Warehouse
+#          - com.github.tchx84.Flatseal
+#          - com.dec05eba.gpu_screen_recorder
+#          - io.github.ilya_zlobintsev.LACT
+#          - io.github.kolunmi.Bazaar
+#          - org.onlyoffice.desktopeditors
+#          - org.kde.kdenlive
+#          - org.kde.okular
+#          - org.kde.dolphin
+#          - org.kde.filelight
+#          - org.fedoraproject.MediaWriter
+#          - org.kde.kate
+#          - dev.deedles.Trayscale
+#          - com.vivaldi.Vivaldi
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
