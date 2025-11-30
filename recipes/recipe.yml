@@ -28,7 +28,7 @@ modules:
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
-        scope: system
+        scope: user
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
           - com.github.marhkb.Pods
@@ -46,6 +46,5 @@ modules:
           - org.kde.kate
           - dev.deedles.Trayscale
           - com.vivaldi.Vivaldi
-      - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
